@@ -1,0 +1,45 @@
+id:
+  key: hotel_id
+destination_id:
+  key: destination_id
+name:
+  key: hotel_name
+description:
+  key: details
+location_lat:
+  key: ''
+location_lng:
+  key: ''
+location_address:
+  key: location.address
+location_city:
+  key: ''
+location_country:
+  key: location.country
+amenities_general:
+  key: amenities.general
+  type: :array
+amenities_room:
+  key: amenities.room
+  type: :array
+images_rooms:
+  key: images.rooms
+  type: :array
+  hash_mapping:
+    link: :url
+    caption: :description
+images_site:
+  key: images.site
+  type: :array
+  hash_mapping:
+    link: :url
+    caption: :description
+images_amenities:
+  key: ''
+  type: :array
+  hash_mapping:
+    link: :url
+    caption: :description
+booking_conditions:
+  key: booking_conditions
+  type: :array

@@ -1,0 +1,3 @@
+class HotelSupplierProcedure < SupplierProcedure
+
+end

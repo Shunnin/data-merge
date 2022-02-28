@@ -1,0 +1,33 @@
+id:
+  key: id
+destination_id:
+  key: destination
+name:
+  key: name
+description:
+  key: info
+location_lat:
+  key: lat
+location_lng:
+  key: lng
+location_address:
+  key: address
+location_city:
+  key: ''
+location_country:
+  key: ''
+amenities_general:
+  key: amenities
+  type: :array
+amenities_room:
+  key: ''
+images_rooms:
+  key: images.rooms
+  type: :array
+images_site:
+  key: ''
+images_amenities:
+  key: images.amenities
+  type: :array
+booking_conditions:
+  key: ''

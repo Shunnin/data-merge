@@ -1,0 +1,32 @@
+id:
+  key: Id
+destination_id:
+  key: DestinationId
+name:
+  key: Name
+description:
+  key: Description
+location_lat:
+  key: Latitude
+location_lng:
+  key: Longitude
+location_address:
+  key: Address
+location_city:
+  key: City
+location_country:
+  key: Country
+amenities_general:
+  key: Facilities
+  type: :array
+amenities_room:
+  key: ''
+images_rooms:
+  key: ''
+images_site:
+  key: ''
+images_amenities:
+  key: ''
+booking_conditions:
+  key: ''
+  type: :array
