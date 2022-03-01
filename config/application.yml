@@ -2,7 +2,7 @@ default: &default
 
   REDIS_URL:  <%= ENV['REDIS_URL'] || 'redis://localhost:6379' %>
   REDIS_DB:   0
-  SIDEKIQ_DB: 2
+  SIDEKIQ_DB: 1
 
   sidekiq:
     username: <%= ENV['SIDEKIQ_USERNAME'] || 'sidekiq.admin' %>
@@ -14,7 +14,7 @@ development:
 test:
   <<: *default
 
-  REDIS_DB:   1
+  REDIS_DB:   2
   SIDEKIQ_DB: 3
 
 production:
