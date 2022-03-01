@@ -78,6 +78,20 @@ jobs:
           paths:
             - ./repo
 
+  test:
+    executor: default
+    steps:
+      - attach_workspace:
+          at: ~/
+      - configure_bundler
+      - run:
+          name: Run Test
+          command: |
+            bundle exec rspec --profile 10 \
+                              --format progress
+      - store_artifacts:
+          path: coverage
+
   rubocop:
     executor: default
     steps:
@@ -88,11 +102,27 @@ jobs:
           name: Scan Rubocop
           command: bundle exec rubocop
 
+  fasterer:
+    executor: default
+    steps:
+      - attach_workspace:
+          at: ~/
+      - configure_bundler
+      - run:
+          name: Scan Fasterer
+          command: bundle exec fasterer
+
 workflows:
   version: 2
   integration:
     jobs:
       - build
+      - test:
+          requires:
+            - build
       - rubocop:
+          requires:
+            - build
+      - fasterer:
           requires:
             - build

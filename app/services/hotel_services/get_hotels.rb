@@ -2,8 +2,8 @@ module HotelServices
   class GetHotels < BaseService
 
     def initialize(search_params)
-      @hotel_ids = search_params[:hotels]
-      @destination = search_params[:destination]
+      @hotel_ids = search_params.hotels
+      @destination = search_params.destination
     end
 
     def execute

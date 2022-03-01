@@ -1,9 +1,9 @@
 module GBlendingData
   class MergingProcessor
 
-      # @param [Hash] merge_strategies The merge strategies wil defined which data version will be prioritized
-      # @param [Any] value             The compare value
-      # @param [Array<Any>] temp_value The temp comparee value
+    # @param [Hash] merge_strategies The merge strategies wil defined which data version will be prioritized
+    # @param [Any] value             The compare value
+    # @param [Array<Any>] temp_value The temp comparee value
     def initialize(merge_strategies, value, temp_value)
       @merge_strategies = merge_strategies
       @value = value
@@ -16,7 +16,7 @@ module GBlendingData
 
       compare_values = [@temp_value.last, @value]
 
-      @merge_strategies.keys.each do |strategy_key|
+      @merge_strategies.each_key do |strategy_key|
         case strategy_key
         when :valid_format
           @merge_result << Strategies::ValidFormatStrategy.new(@merge_strategies, compare_values).execute
