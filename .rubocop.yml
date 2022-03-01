@@ -17,6 +17,7 @@ AllCops:
     - 'config/**/*'
     - 'db/**/*'
     - 'spec/spec_helper.rb'
+    - 'vendor/bundle/**/*'
   DefaultFormatter: fuubar
   DisplayCopNames: true
   DisabledByDefault: true
