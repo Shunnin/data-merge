@@ -62,12 +62,42 @@ module MergingServices
               text_matching: true,
             },
           },
-          amenities_general: { },
-          amenities_room: { },
-          images_rooms: { },
-          images_site: { },
-          images_amenities: { },
-          booking_conditions: { },
+          amenities_general: {
+            merge_strategies: {
+              combine: true,
+            }
+          },
+          amenities_room: {
+            merge_strategies: {
+              combine: true,
+            }
+          },
+          images_rooms: {
+            merge_strategies: {
+              combine: {
+                uniq_key: :link
+              },
+            }
+          },
+          images_site: {
+            merge_strategies: {
+              combine: {
+                uniq_key: :link
+              },
+            }
+          },
+          images_amenities: {
+            merge_strategies: {
+              combine: {
+                uniq_key: :link
+              },
+            }
+          },
+          booking_conditions: {
+            merge_strategies: {
+              combine: true,
+            }
+          },
         }.freeze
       end
 

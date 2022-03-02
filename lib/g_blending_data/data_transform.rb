@@ -32,11 +32,11 @@ module GBlendingData
     def blend_data(value, temp, conf)
       return if value.blank?
 
-      if temp.present?
-        temp = MergingProcessor.new(conf[:merge_strategies], value, temp).execute
-      else
-        temp << value
-      end
+      temp << if temp.present?
+                MergingProcessor.new(conf[:merge_strategies], value, temp).execute
+              else
+                value
+              end
     end
 
     def handle_blending_data_success(result)

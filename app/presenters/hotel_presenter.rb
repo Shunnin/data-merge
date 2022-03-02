@@ -34,7 +34,7 @@ class HotelPresenter
   def amenities
     {
       general: @hotel_details[:amenities_general],
-      room: @hotel_details[:amenities_rooms],
+      room: @hotel_details[:amenities_room],
     }
   end
 
@@ -48,23 +48,6 @@ class HotelPresenter
 
   def booking_conditions
     @hotel_details[:booking_conditions]
-  end
-
-  private
-
-  def supported_images
-    {
-      rooms: @hotel_details[:images_rooms],
-      site: @hotel_details[:images_site],
-      amenities: @hotel_details[:images_amenities],
-    }
-  end
-
-  def supported_amenities
-    {
-      general: @hotel_details[:amenities_general],
-      room: @hotel_details[:amenities_rooms],
-    }
   end
 
 end

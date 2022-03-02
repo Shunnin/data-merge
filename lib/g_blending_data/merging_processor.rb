@@ -12,7 +12,7 @@ module GBlendingData
     end
 
     def execute
-      return [@value] if @merge_strategies.blank?
+      return @value if @merge_strategies.blank?
 
       compare_values = [@temp_value.last, @value]
 
@@ -22,6 +22,8 @@ module GBlendingData
           @merge_result << Strategies::ValidFormatStrategy.new(@merge_strategies, compare_values).execute
         when :text_matching
           @merge_result << Strategies::TextMatchingStrategy.new(@merge_strategies, compare_values).execute
+        when :combine
+          return Strategies::CombineStrategy.new(@merge_strategies, compare_values).execute
         else
           raise StandardError, "Unsupported merge strategy: #{strategy_key}"
         end
