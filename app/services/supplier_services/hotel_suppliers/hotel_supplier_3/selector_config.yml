@@ -24,10 +24,16 @@ amenities_room:
 images_rooms:
   key: images.rooms
   type: :array
+  hash_mapping:
+    url: :link
+    description: :description
 images_site:
   key: ''
 images_amenities:
   key: images.amenities
   type: :array
+  hash_mapping:
+    url: :link
+    description: :description
 booking_conditions:
   key: ''

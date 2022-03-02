@@ -9,6 +9,8 @@ module GProcuringData
       return if @profile.blank?
 
       supplier_data = build_supplier_data
+      # NOTE: Before process sanitizing, we can build the mechanism to
+      # validate selector_config_file is invalid or not
       supplier_data.each(&method(:process_sanitizing))
 
       { success: true }

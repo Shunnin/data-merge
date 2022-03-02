@@ -26,19 +26,19 @@ images_rooms:
   key: images.rooms
   type: :array
   hash_mapping:
-    link: :url
+    link: :link
     caption: :description
 images_site:
   key: images.site
   type: :array
   hash_mapping:
-    link: :url
+    link: :link
     caption: :description
 images_amenities:
   key: ''
   type: :array
   hash_mapping:
-    link: :url
+    link: :link
     caption: :description
 booking_conditions:
   key: booking_conditions
