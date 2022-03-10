@@ -12,12 +12,22 @@ module GBlendingData
 
       def process_validating
         uniq_key = @merge_strategies[strategy_type].try(:[], :uniq_key)
+        selected_value = Set.new
+        temp_selected_value = Set.new
 
-        result = @compare_values.flatten.uniq do |item|
-          item.is_a?(Hash) ? indicator_uniq_by(item, uniq_key) : sanitize(item)
+        # ['Outdoor Pool', 'indoor pool', 'pool']
+        SortedSet[*@compare_values.flatten].each do |item|
+          # Transform the string by downcase and removing specific character
+          current_value = sanitize(item)
+
+          # If have duplicate => not add to the selected value
+          if temp_selected_value.none? { |v| v.include?(current_value) }
+            temp_selected_value << current_value
+            selected_value << item
+          end
         end
 
-        format_data(result)
+        format_data(selected_value)
       end
 
       private
